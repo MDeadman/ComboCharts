@@ -28,7 +28,7 @@ The following functions can be called on a chart area to create charts on the re
 This can be done such as the following example
 
 ```javascript
-var chartarea = new ComboChart.ChartArea('scaleChart', {
+var chartarea = new ComboChart.ChartArea('ComboChartId', {
       width: 1200,
       height: 700
     })
