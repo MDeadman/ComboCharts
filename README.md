@@ -46,7 +46,7 @@ var linechart = new chartarea.createLineChart({
 linechart.generateLegend({
   x: 900,
   y: 20
-});
+})
 
 var barchart = new chartarea.createBarChart({
   data: barData,
