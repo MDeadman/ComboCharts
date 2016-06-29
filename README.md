@@ -29,36 +29,36 @@ To use ComboCharts you must first create a chart area. A chart area is where cha
 For example
 
 ```javascript
-      var chartarea = new ComboChart.ChartArea('scaleChart', {
-      width: 1200,
-      height: 700,
-      xScaleType: 'time'
-    })
+var chartarea = new ComboChart.ChartArea('scaleChart', {
+  width: 1200,
+  height: 700,
+  xScaleType: 'time'
+})
 
-    var linechart = new chartarea.createLineChart({
-      data: lineData,
-      xLineSelection: true,
-      xCursorLine: true,
-      xPosTooltip: true,
-      layer: 2
-    })
+var linechart = new chartarea.createLineChart({
+  data: lineData,
+  xLineSelection: true,
+  xCursorLine: true,
+  xPosTooltip: true,
+  layer: 2
+})
 
-    linechart.generateLegend({
-      x: 900,
-      y: 20
-    });
+linechart.generateLegend({
+  x: 900,
+  y: 20
+});
 
-    var barchart = new chartarea.createBarChart({
-      data: barData,
-      groupXValues: ['2015-02-01', '2015-04-01', '2015-05-01', '2015-11-01'],
-      barWidth: 30,
-      layer: 1
-    })
+var barchart = new chartarea.createBarChart({
+  data: barData,
+  groupXValues: ['2015-02-01', '2015-04-01', '2015-05-01', '2015-11-01'],
+  barWidth: 30,
+  layer: 1
+  })
 
-    barchart.generateLegend({
-      x: 700,
-      y: 20
-    })
+barchart.generateLegend({
+  x: 700,
+  y: 20
+})
 ```
 
 ![alt text](http://i.imgur.com/Xbj1sZj.jpg "Example Chart")
