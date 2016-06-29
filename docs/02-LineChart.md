@@ -31,13 +31,18 @@ xLineSelection | `Boolean` | If true will enable x line selection. On click this
 xCursorLine | `Boolean` | If true will draw a vertical line at the cursors position while mousing over the plot area.
 xPosTooltip | `Boolean` | If true will draw a tooltip at the cursors position showing all the points data at the nearest x value which has points. 
 
+### Legend 
+To create a legend call `generateLegend` on the line chart object. The `generateLegend` function takes in an options object  The legend will automatically be appended to the chart area of the line chart the legend was generated for. If you want to append the legend to another element set the `elementID` property in the options object.
+
+The following are options that can be passed into the options object to customise the legend.
+
+Property | Type | Usage
+--- | --- | ---
+elementID | `String` | If a value is passed in, the legend will be appended to the div of the id passed in. If no value is passed in the chart will be appended to the chart area.
+x | `Number` | If the legend is appended to the chart area, will set the x position of the legend within the chart area. The top left of the plot area is `0, 0`
+y | `Number` | If the legend is appended to the chart area, will set the y position of the legend within the chart area. The top left of the plot area is `0, 0`
+font | `String` | Set the font family of the text in the legend.
+
+↓↓Coming soon↓↓
 ### Updating data 
-
-
-
 ### Getting Data
-The following functions can be called on a line chart to get values about the line chart.
-
-Function | Parameters | Returns | Usage
---- | --- | --- | ---
-
