@@ -14,6 +14,8 @@ So I decided it would not only be a fun project and learning experience but a us
 
 ## Installation
 
+![alt text](http://i.imgur.com/Xbj1sZj.jpg "Example Chart")
+
 ```
 EXAMPLE
 ```
@@ -21,6 +23,9 @@ EXAMPLE
 ## Example
 
 To use ComboCharts you must first create a chart area. A chart area is where charts and other elements will be created and displayed. Charts must be drawn as 
+
+
+
 
 ```
 EXAMPLE
