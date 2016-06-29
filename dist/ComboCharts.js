@@ -311,7 +311,7 @@ ComboChart.ChartArea = function (elementId, options) {
     Line   Data Point      graph totals/comparisons/etc
       ↓   ↙                          ↓↓
     [ [  [xValue, yValue(, optional extra y values)], [dataPoint2] ], [line2], [etc...] ]  */
-    var data = lineOptions.data || [[[]]]
+    var data = lineOptions.data || []
 
     //Color/labels for line of matching index
     var colors = lineOptions.colors || ['#e21f1f', '#0b5ed0', '#1b7e09', '#a10dce', '#e26d09'];
@@ -888,7 +888,7 @@ ComboChart.ChartArea = function (elementId, options) {
             //        'box-shadow': '0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)'
         });
 
-      //Updates the tooltip based on x position 
+      //Updates the tooltip based on mouse position
       tooltip.update = function (position) {
         var selectedXVal = xScale.invert(position[0])
         var closestPoint = findClosestXVal(selectedXVal)
@@ -940,10 +940,12 @@ ComboChart.ChartArea = function (elementId, options) {
         tooltipPointer
           .style('left', (-10) + 'px')
           .style('top', (tooltipYPos - 4) + 'px')
-
+        
+        var divPos = chartElement.getBoundingClientRect();
+        
         tooltip
-          .style('left', (position[0] + 30) + 'px')
-          .style('top', (position[1] - tooltipYPos) + 'px')
+          .style('left', (divPos.left + position[0] + 30) + 'px')
+          .style('top', (divPos.top + position[1] - tooltipYPos - 8) + 'px')
           .style('opacity', .9)
           .style('z-index', '5');
       }
@@ -1108,7 +1110,7 @@ ComboChart.ChartArea = function (elementId, options) {
     var barWidth = barOptions.barWidth || 'auto';
 
     //Whether group tooltips are enabled or not 
-    var tooltipEnabled = barOptions.tooltipEnabled || true;
+    var tooltipEnabled = barOptions.tooltipEnabled || false;
 
     //Set the layer which determines which order to draw each chart in 
     //ie which charts are on top of which 
@@ -1129,7 +1131,7 @@ ComboChart.ChartArea = function (elementId, options) {
      Group  Bar in group          
        ↓   ↙                   
     [  [Bar1, Bar2], [Group2] ]   */
-    var bars = [[]];
+    var bars = [];
 
     //Stores the last bars group x position
     var lastBarWidth = padding;
@@ -1356,12 +1358,14 @@ ComboChart.ChartArea = function (elementId, options) {
             bars[a][b].transition().delay(200).remove();
           }
           //Remove tooltips
-          barTooltips[a].transition().duration(200)
-            .attr('y', plotHeight)
-            .attr('height', 0)
-            .attr('width', bWidth);
-
-          barTooltips[a].transition().delay(200).remove();
+          if (groupTooltip != undefined) {
+            barTooltips[a].transition().duration(200)
+              .attr('y', plotHeight)
+              .attr('height', 0)
+              .attr('width', bWidth);
+            barTooltips[a].transition().delay(200).remove();
+          }
+          
         }
         bars.splice(newData.length, (bars.length - newData.length));
       }

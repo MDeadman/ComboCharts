@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Line Chart Example</title>
+  <script src="../d3.min.js"></script>
+  <script src="../dist/ComboCharts.js"></script>
+</head>
+
+<body>
+  <p>Press the buttons to update the bars</p>
+  <button onclick="showMore()">Show More Bars</button>
+  <button onclick="showLess()">Show Less Bars</button>
+  <div id="ComboChart"></div>
+
+  <script type="text/javascript">
+    var data = [
+               [
+               ['2015-01-01', 3, 5], ['2015-02-01', 4, 10], ['2015-03-01', 6, 9], ['2015-04-01', 5, 9], ['2015-05-01', 9, 11], ['2015-06-01', 11, 15], ['2015-07-01', 11, 17], ['2015-08-01', 12, 19], ['2015-09-01', 13, 18], ['2015-10-01', 16, 17], ['2015-11-01', 17, 19], ['2015-12-01', 20, 20], ['2016-02-01', 29, 24]
+               ], [
+               ['2015-01-01', 6, 10], ['2015-02-01', 12, 11], ['2015-03-01', 10, 13], ['2015-04-01', 13, 13], ['2015-05-01', 13, 14], ['2015-06-01', 14, 17], ['2015-07-01', 10, 13], ['2015-08-01', 10, 15], ['2015-09-01', 12, 14], ['2015-10-01', 13, 12], ['2015-11-01', 18, 14], ['2015-12-01', 22, 19], ['2016-01-01', 24, 22]
+               ], [
+               ['2015-01-01', 10, 8], ['2015-02-01', 15, 18], ['2015-03-01', 17, 20], ['2015-04-01', 16, 16], ['2015-05-01', 22, 17], ['2015-06-01', 27, 23], ['2015-07-01', 26, 22], ['2015-08-01', 25, 22], ['2015-09-01', 20, 21], ['2015-10-01', 16, 18], ['2015-11-01', 13, 17], ['2015-12-01', 9, 13], ['2016-01-01', 12, 17]
+               ]
+               ];
+
+    var chartarea = new ComboChart.ChartArea('ComboChart', {
+      width: 1200,
+      height: 700,
+      xScaleType: 'time'
+    })
+
+    var linechart = new chartarea.createLineChart({
+      data: data,
+      xCursorLine: true,
+      xPosTooltip: true,
+      layer: 2
+    })
+
+    linechart.generateLegend({
+      x: 900,
+      y: 20
+    })
+
+    var barchart = new chartarea.createBarChart({
+      data: [[2, 37], [3, 8, 11], [7, 14], [7, 8]],
+      groupXValues: ['2015-02-01', '2015-04-01', '2015-05-01', '2015-11-01'],
+      barWidth: 30,
+      tooltipEnabled: true,
+      layer: 1
+    })
+
+    barchart.generateLegend({
+      x: 700,
+      y: 20
+    })
+
+    function showMore() {
+      barchart.updateBarsStacked({
+        data: [[2, 37], [3, 8, 11, 4], [12, 14], [7, 8], [2, 37], [3, 8, 11], [7, 14], [7, 8]],
+        groupXValues: ['2015-03-01', '2015-06-01', '2015-08-01', '2015-11-01', '2016-01-01', '2016-03-01', '2016-04-01', '2016-06-01']
+      })
+    }
+
+    function showLess() {
+      barchart.updateBarsStacked({
+        data: [[2, 37], [3, 8, 11], [7, 14], [7, 8]],
+        groupXValues: ['2015-02-01', '2015-04-01', '2015-05-01', '2015-11-01']
+      })
+    }
+  </script>
+</body>
+
+</html>
