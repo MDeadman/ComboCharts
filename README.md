@@ -1,6 +1,6 @@
 # ComboCharts
 
-**Note**: This is a very early work in progress, much of the work here will change and some of the functionality described is not yet functional. This project is very much a learning experience for me!
+**Note**: This is a very early work in progress, much of the work here will change and some of the functionality described is not yet functional. This project is very much a learning experience for me! Src folder and modular version coming very soon.
 
 **Note**: ComboCharts does not currently work with D3 4.0, use a 3.X version. Support for 4.0 coming soon™
 
