@@ -2,8 +2,8 @@
 # Getting Started
 
 #### Download ComboCharts
-* [Standard build](https://raw.githubusercontent.com/MDeadman/ComboCharts/dev/dist/ComboCharts.js)
-* [Minified bulid](https://raw.githubusercontent.com/MDeadman/ComboCharts/dev/dist/ComboCharts.min.js)
+* [Standard build](https://raw.githubusercontent.com/MDeadman/ComboCharts/master/dist/ComboCharts.js)
+* [Minified bulid](https://raw.githubusercontent.com/MDeadman/ComboCharts/master/dist/ComboCharts.min.js)
 
 ### Installation
 
