@@ -64,8 +64,8 @@ barchart.generateLegend({
 ![alt text](http://i.imgur.com/Xbj1sZj.jpg "Example Chart")
 
 ## API Reference
-Check out the [Getting Started Docs]()
-Or the [full documentation]()
+Check out the [Getting Started Docs](https://github.com/MDeadman/ComboCharts/blob/master/docs/00-GettingStarted.md)
+Or the [full documentation](https://github.com/MDeadman/ComboCharts/tree/master/docs)
 
 ## Todo List 
 Much of this project is an early WIP and learning experience.
