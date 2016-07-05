@@ -1,0 +1,28 @@
+{
+  "name": "combocharts",
+  "version": "0.1.0",
+  "description": "A JavaScript charting library based on D3.js",
+  "main": "src/ComboCharts.js",
+  "directories": {
+    "doc": "docs",
+    "example": "examples"
+  },
+  "dependencies": {
+    "browserify": "^13.0.1",
+    "grunt-cli": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MDeadman/ComboCharts.git"
+  },
+  "author": "Matthew Deadman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MDeadman/ComboCharts/issues"
+  },
+  "homepage": "https://github.com/MDeadman/ComboCharts#readme"
+}
