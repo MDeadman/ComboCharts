@@ -8,8 +8,7 @@
     "example": "examples"
   },
   "dependencies": {
-    "browserify": "^13.0.1",
-    "grunt-cli": "^1.2.0"
+    "webpack": "^1.13.1"
   },
   "devDependencies": {},
   "scripts": {

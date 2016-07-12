@@ -3,11 +3,9 @@
 
  * --------------------------------------------------------------------------------- */
 
-'use strict';
-
-module.exports = function (chartArea) {
-
-  chartArea.createBarChart = function (barOptions) {
+module.exports = function() {
+  
+  var createBarChart = function (barOptions) {
     //User Options ----------------------------------------------------------------------
     var barOptions = barOptions || {};
 
@@ -715,9 +713,6 @@ module.exports = function (chartArea) {
         .attr('height', 29 + ((maxNumOfGroupedElem - 1) * 20))
         .attr('width', 48 + maxBBoxWidth);
     }
-
-
   }
-
-
+  return createBarChart;
 }

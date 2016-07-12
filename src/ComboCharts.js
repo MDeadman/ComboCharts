@@ -12,13 +12,12 @@
 |/                         \_/                              |
 |__________________________________________________________*/
 
-'use strict';
+//'use strict';
 
 var ComboChart = {
   version: '0.1'
 }
 
-ComboChart.ChartArea = require('./core/ChartArea.js');
+require('./core/ChartArea.js')(ComboChart);
 
-require('./charts/LineChart.js')(ComboChart.ChartArea);
-require('./charts/BarChart.js')(ComboChart.ChartArea);
+module.exports = ComboChart;

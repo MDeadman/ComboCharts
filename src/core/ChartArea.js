@@ -3,11 +3,9 @@
 
  * --------------------------------------------------------------------------------- */
 
-'use strict';
+module.exports = function (CC) {
 
-module.exports = function () {
-
-  var chartArea = function (elementId, options) {
+  CC.ChartArea = function (elementId, options) {
 
     //Chart Element
     var chartElement = document.getElementById(elementId);
@@ -283,7 +281,9 @@ module.exports = function () {
         chartLayers[a][0](data);
       }
     }
-
+    
+    
+    this.createLineChart = require('./../charts/LineChart.js')();
+    this.createBarChart = require('./../charts/BarChart.js')();
   }
-  return chartArea;
 }
